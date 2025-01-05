@@ -43,7 +43,7 @@ $projectRelativePath = str_replace('C:\\xampp\\htdocs\\', 'http://localhost/', $
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="ms-auto d-flex" id="form-login"><!-- TODO este div creo que lo puedo borrar-->
+        <div class="ms-auto d-flex" id="form-login">
             <span>
                 <?php if (isset($errorLogin)) {echo $errorLogin;} ?>
             </span>

@@ -3,12 +3,10 @@
 
 //$RestaurantController = new RestaurantController();
 
-    //TODO aca creo que tendria que validar en caso de que me redireccione a este php sin un ID valido
+    
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-    } else {
-        
-    }
+    } else
     
     if (isset($_GET["error"])){
         $error = $_GET["error"];

@@ -12,11 +12,10 @@ todo el código PHP en el archivo incluido se ejecutará, a menos que esté dent
     $restaurantController = new RestaurantController();
     $categoriesRestaurant = $restaurantController->readCategoriesAction();
     
-    //TODO aca creo que tendria que validar en caso de que me redireccione a este php sin un ID valido
+    
     if (isset($_GET['idParaModificar'])) {
         $id = $_GET['idParaModificar'];
         
-        //EN VEZ DE USAR DAO IMPLEMENTAR EL CONTROLLER COMO INTERMEDIARIO --------------------------
         $restaurantDAO = new RestauranteDAO(); // Asume que tienes una clase DAO para manejar tus datos
         $restaurante = $restaurantDAO->selectById($id); // Método que recupera el objeto por ID
         
@@ -94,7 +93,7 @@ todo el código PHP en el archivo incluido se ejecutará, a menos que esté dent
       <label for="price" class="col-2 col-form-label">Precio</label>
       <div class="col-10">
         <input type="text" class="form-control" id="price" name="price" value="<?php echo $minorPrice. "-" .$mayorPrice;?>"  placeholder="Price">
-      </div><!--TODO me falta validar que el usuario no pueda ingresar un PrecioMayor-PrecioMenor, tiene que ser menor-mayor-->
+      </div>
     </div>
     <div class="row p-3">
         <label for="categoriesRestaurant" class="col-2 col-form-label">Selecciona una categoría:</label>

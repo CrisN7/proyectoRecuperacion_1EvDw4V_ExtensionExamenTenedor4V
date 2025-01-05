@@ -58,7 +58,7 @@ class ValidationsRules {
             return $datoAValidar;
         }
         else{
-            return "Gestor";//TODO calculo que esto sera como una validacion extra para establecer el valor por defecto de un usuario que intente registrarse. Lo que no entiendo es como se puede llegar a este caso si en el form de registrarse el profe le da solo dos opciones al usuario
+            return "Gestor";
         }
     }
     

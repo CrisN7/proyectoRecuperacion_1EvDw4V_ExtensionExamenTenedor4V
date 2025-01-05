@@ -33,6 +33,8 @@ class RestaurantController {
     public function __construct() {
     }
     
+
+    
     //Obtención de la lista completa de creatures
     function readAction() {
         $restaurantDAO = new RestauranteDAO();
@@ -94,6 +96,7 @@ class RestaurantController {
             return $results;
         } else {//En caso de que la consulta no devuelva elementos, redireccionamos al mismo index pero con otro URL parameter para imprimir el error de tipo de restaurante no encontrado
             header('Location: index.php?error=TipoRestntNoEncontrado');
+            exit();
         }
         
     }

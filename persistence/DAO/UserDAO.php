@@ -15,7 +15,7 @@ class UserDAO {
     }
 
     
-    //TODO veo que el profe no usa esta funcion en su solucion, capaz la termine borrando
+    
     public function selectAll() {
         $query = "SELECT * FROM " . UserDAO::USER_TABLE;
         $result = mysqli_query($this->connection, $query);

@@ -109,7 +109,7 @@ class RestauranteDAO {
         mysqli_stmt_execute($stmt);
         
         $filteredRestaurants = [];
-        mysqli_stmt_bind_result($stmt, $idR, $name, $image, $menu, $minorPrice, $mayorPrice);//TODO  VER ESTO $idCategory
+        mysqli_stmt_bind_result($stmt, $idR, $name, $image, $menu, $minorPrice, $mayorPrice);
         
         $restaurant = new Restaurant();
         while(mysqli_stmt_fetch($stmt)){

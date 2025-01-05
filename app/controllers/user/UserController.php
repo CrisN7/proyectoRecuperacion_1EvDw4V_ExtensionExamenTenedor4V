@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Función encargada de crear nuevos usuarios
 function createAction() {
     // Obtención de los valores del formulario y validación.
-    //TODO veo que no recupera el valor del input "name", ver si luego lo puedo usar
     $email = ValidationsRules::test_input($_POST["email"]);
     $pass = ValidationsRules::test_input($_POST["password"]);
     $type = ValidationsRules::testUserType($_POST["type"]);
@@ -42,7 +41,7 @@ function createAction() {
     //Creamos un objeto UserDAO para hacer las llamadas a la BD
     $userDAO = new UserDAO();
     $userDAO->insert($user);
-    $user = $userDAO->getUserInformation($user);//TODO No entiendo porque despues de insertar el user a la BD, obtengo de nuevo la informacion, si ya la tenia de antemano con los campos del formulario que redirecciono a este fichero
+    $user = $userDAO->getUserInformation($user);
     
     // Establecemos la sesión
     SessionUtils::startSessionIfNotStarted();
@@ -67,12 +66,13 @@ function checkAction() {
         SessionUtils::startSessionIfNotStarted();
         SessionUtils::setSession($user->getEmail(), $user->getType(), $user->getUserid());
     
-        header('Location: ../../private/views/index.php');    
+        header('Location: ../../private/views/index.php');
+        exit();
     }
     else
     {
-        // TODO No existe
-        header('Location: ../../public/views/index.php?error=ErrorLogin');    
+        header('Location: ../../public/views/index.php?error=ErrorLogin');
+        exit();
     }
         
 }
